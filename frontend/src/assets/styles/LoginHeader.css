@@ -1,0 +1,32 @@
+.login-header h1 {
+  margin: 0%;
+  font-family: "poppins", sans-serif;
+  color: aliceblue;
+}
+.login-header img {
+  height: 80px;
+  width: 80px;
+
+  filter: brightness(0) invert(1);
+}
+.login-header {
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0% 5%;
+  height: 8%;
+}
+.login-header a {
+  text-decoration: none;
+  color: aliceblue;
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+.login-header a :hover {
+  letter-spacing: 0.3em;
+  transition: letter-spacing 0.2s ease-in-out;
+}

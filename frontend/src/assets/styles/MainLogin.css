@@ -1,0 +1,56 @@
+.main-container {
+  height: 82%;
+  background-color: rgba(97, 92, 249, 0.409);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-container form {
+  background-color: rgb(44, 44, 44);
+  height: 350px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 0px 25px;
+  border-radius: 20px;
+}
+
+.main-container form label,
+.btn {
+  margin-top: 40px;
+}
+
+.main-container form label {
+  color: #fff;
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inp {
+  border: none;
+  height: 30px;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+.inp:focus-visible {
+  outline: none;
+}
+.btn {
+  background-color: aliceblue;
+  height: 35px;
+  width: 100px;
+  align-self: center;
+  border-radius: 20px;
+  border: none;
+}
+
+.btn:hover {
+  background-color: rgba(141, 137, 253, 0.746);
+  transition: 0.3s;
+  color: #fff;
+}

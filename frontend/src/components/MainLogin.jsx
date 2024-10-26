@@ -1,3 +1,18 @@
+import "../assets/styles/MainLogin.css";
 export const MainLogin = () => {
-  return <main>MainLogin</main>;
+  return (
+    <main className="main-container">
+      <form>
+        <label>
+          username
+          <input type="text" className="inp" />
+        </label>
+        <label>
+          Password
+          <input type="password" className="inp" />
+        </label>
+        <button className="btn">Submit</button>
+      </form>
+    </main>
+  );
 };

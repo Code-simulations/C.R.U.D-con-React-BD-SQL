@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import myFirma from "../assets/img/mi-firma.svg";
-import "../assets/styles/LoginHeader.css";
+import "../assets/styles/HeaderLogin.css";
 export const LoginHeader = ({ title }) => {
   return (
     <header className="login-header">

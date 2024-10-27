@@ -1,0 +1,32 @@
+.register-container {
+  background-color: rgba(97, 92, 249, 0.409);
+  height: 82%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register-container form {
+  background-color: rgb(44, 44, 44);
+  height: 350px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 0px 25px;
+  border-radius: 20px;
+}
+
+.register-container form label,
+.btn {
+  margin-top: 20px;
+}
+
+.register-container form label {
+  color: #fff;
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

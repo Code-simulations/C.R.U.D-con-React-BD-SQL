@@ -1,0 +1,19 @@
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(44, 44, 44);
+  height: 10%;
+}
+.footer-container h2 {
+  color: aliceblue;
+  font-family: "poppins", sans-serif;
+}
+.footer-container a {
+  color: aliceblue;
+  text-decoration: none;
+}
+.footer-container a:hover {
+  text-decoration: underline;
+  transition: 0.3s;
+  color: rgba(149, 145, 255, 0.763);
+}

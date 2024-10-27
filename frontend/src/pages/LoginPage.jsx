@@ -1,10 +1,13 @@
-import { LoginHeader } from "../components/HeaderLogin";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 import { MainLogin } from "../components/MainLogin";
+
 export const Login = () => {
   return (
     <>
-      <LoginHeader title="Login" />
+      <Header title="Login" url="/register" link="Register" />
       <MainLogin />
+      <Footer />
     </>
   );
 };

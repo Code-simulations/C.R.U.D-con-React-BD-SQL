@@ -5,7 +5,7 @@ import { MainRegister } from "../components/MainRegister";
 export const Register = () => {
   return (
     <>
-      <Header title="Register" url="/Login" link="Login" />
+      <Header title="Register" url="/login" link="Login" />
       <MainRegister />
       <Footer />
     </>

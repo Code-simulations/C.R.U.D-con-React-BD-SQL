@@ -26,3 +26,42 @@ export const register = async (req, res) => {
     console.log(color.blue("-----------------------------------------------------------------------------------------------------"));
   }
 };
+
+export const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const sql = "SELECT * FROM `users` WHERE email=?";
+
+    const [[user]] = await connection.query(sql, email);
+
+    if (!user) return res.status(404).json({ message: "usuario no encontrado" });
+
+    const isValid = await bcrypt.compare(password, user.password);
+
+    if (!isValid) return res.status(400).json({ message: "contraseña incorrecta" });
+
+    const token = await generateJwt(user.id);
+
+    res.cookie("authToken", token, {
+      secure: true,
+      httpOnly: true,
+      maxAge: 3600000,
+    });
+
+    res.status(200).json({ message: "iniciando sesión" });
+  } catch (error) {
+    console.log(color.blue("-----------------------------------------------------------------------------------------------------"));
+    console.log(color.red("                            hubo un error con el controlador de acceso"));
+    console.log(color.blue("-----------------------------------------------------------------------------------------------------"));
+    console.log();
+    console.log(error);
+    console.log();
+    console.log(color.blue("-----------------------------------------------------------------------------------------------------"));
+  }
+};
+
+export const session = async (req, res) => {
+  const [[user]] = req.user;
+  res.json({ user: user });
+};

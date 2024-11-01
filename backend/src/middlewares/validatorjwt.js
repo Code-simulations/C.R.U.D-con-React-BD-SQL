@@ -4,7 +4,7 @@ export const validatorJwt = async (req, res, next) => {
   try {
     const token = req.cookies.authToken;
 
-    if (token) return res.status(401).json({ message: "no tienes accesos a esta pagina " });
+    if (!token) return res.status(401).json({ message: "no tienes accesos a esta pagina " });
 
     const decode = jwt.verify(token, "hola");
 

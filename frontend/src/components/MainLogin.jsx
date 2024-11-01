@@ -1,4 +1,4 @@
-import "../assets/styles/MainLogin.css";
+import "../assets/styles/Login.css";
 export const MainLogin = () => {
   return (
     <main className="main-container">

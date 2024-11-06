@@ -13,7 +13,8 @@ export const register = async (req, res) => {
 
     const [newUser] = await connection.query(sql, [username, email, hashedPassword]);
 
-    if (!newUser) return res.status(500).json({ message: "Error inesperado no se udo realizar el registro " });
+    if (!newUser)
+      return res.status(500).json({ message: "Error inesperado no se udo realizar el registro " });
 
     return res.status(200).json({ message: "usuario registrado correctamente" });
   } catch (error) {
@@ -22,7 +23,9 @@ export const register = async (req, res) => {
         "-----------------------------------------------------------------------------------------------------"
       )
     );
-    console.log(color.red("                            hubo un error con el controlador de registros"));
+    console.log(
+      color.red("                            hubo un error con el controlador de registros")
+    );
     console.log(
       color.blue(
         "-----------------------------------------------------------------------------------------------------"
@@ -68,7 +71,9 @@ export const login = async (req, res) => {
         "-----------------------------------------------------------------------------------------------------"
       )
     );
-    console.log(color.red("                            hubo un error con el controlador de acceso"));
+    console.log(
+      color.red("                            hubo un error con el controlador de acceso")
+    );
     console.log(
       color.blue(
         "-----------------------------------------------------------------------------------------------------"
@@ -86,8 +91,32 @@ export const login = async (req, res) => {
 };
 
 export const session = async (req, res) => {
-  const [[user]] = req.user;
-  res.json({ user: user });
+  try {
+    const [[user]] = req.user;
+    res.status(200).json({ user: user });
+  } catch (error) {
+    console.log(
+      color.blue(
+        "-----------------------------------------------------------------------------------------------------"
+      )
+    );
+    console.log(
+      color.red("                            hubo un error con el controlador de acceso")
+    );
+    console.log(
+      color.blue(
+        "-----------------------------------------------------------------------------------------------------"
+      )
+    );
+    console.log();
+    console.log(error);
+    console.log();
+    console.log(
+      color.blue(
+        "-----------------------------------------------------------------------------------------------------"
+      )
+    );
+  }
 };
 
 export const logout = async (req, res) => {

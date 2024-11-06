@@ -30,3 +30,20 @@
   letter-spacing: 0.3em;
   transition: letter-spacing 0.2s ease-in-out;
 }
+.btn-logout {
+  text-decoration: none;
+  color: aliceblue;
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  background: none;
+  border: none;
+  width: 180px;
+}
+
+.btn-logout:hover {
+  letter-spacing: 0.3em;
+  transition: letter-spacing 0.2s ease-in-out;
+}

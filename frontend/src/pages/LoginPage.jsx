@@ -9,8 +9,6 @@ export const Login = () => {
   const { isAuth } = useContext(AuthContext);
   useEffect(() => {
     if (isAuth !== undefined && isAuth !== null) {
-      console.log(isAuth);
-
       navigate("/");
     }
   }, [isAuth]);

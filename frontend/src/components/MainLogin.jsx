@@ -30,15 +30,17 @@ export const MainLogin = () => {
             e.preventDefault();
             const email = emailRef.current.value;
             const password = passwordRef.current.value;
-            const res = await login(email, password);
-            alert(res.message);
-            const reqSession = await fetch("http://localhost:4000/session", {
-              method: "GET",
-              credentials: "include",
-            });
-            const resSession = await reqSession.json();
-            setIsAuth(resSession.user);
-            navigate("/");
+            const { reqLogin, resLogin } = await login(email, password);
+            if (reqLogin.ok) {
+              alert(resLogin.message);
+              const reqSession = await fetch("http://localhost:4000/session", {
+                method: "GET",
+                credentials: "include",
+              });
+              const resSession = await reqSession.json();
+              setIsAuth(resSession.user);
+              navigate("/");
+            }
           }}
         >
           Submit

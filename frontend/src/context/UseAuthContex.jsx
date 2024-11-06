@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(undefined);
 
   useEffect(() => {
-    fetch("http://localhost:4000/session", { method: "GET", credentials: "include" })
+    fetch("http://localhost:4000/session", { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setIsAuth(data.user))
       .catch(setIsAuth(null));

@@ -62,11 +62,11 @@
   flex-direction: column;
   align-items: center;
 }
-.tasks h2 {
+.tasks h3 {
   margin: 0%;
   font-family: "poppins", sans-serif;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .tasks-container {
   width: 100%;
@@ -79,17 +79,42 @@
 }
 .task {
   background-color: aliceblue;
-  width: 90%;
+  width: 60%;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 5% 10%;
+  min-height: 250px;
 }
-.task div {
-  width: 50%;
+
+.btn-operator {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: center;
+  width: 30%;
+  height: 100%;
+  gap: 10%;
 }
-.task p {
+.btn-operator button {
+  height: 20%;
+  border: none;
+  background-color: blueviolet;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.div-tasks {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.description-p {
+  height: 70%;
+}
+.updateForm {
+  background-color: aqua;
 }

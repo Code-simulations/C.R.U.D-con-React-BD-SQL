@@ -2,16 +2,17 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import "../assets/styles/MainHome.css";
 import { createTasks, getTasks } from "../api/auth.api";
 import { LoadingTasks } from "./LoadingTasks";
+import { deleteTask } from "../api/tasks.api";
 
 export const MainHome = () => {
   const [tasks, setTasks] = useState([]);
   const titleR = useRef();
   const descriptionR = useRef();
   const statusR = useRef();
+
   useEffect(() => {
     getTasks().then((res) => {
       setTasks(res.res.tasks);
-      console.log(tasks);
     });
   }, []);
   const createTask = async (e) => {
@@ -23,9 +24,9 @@ export const MainHome = () => {
     alert(res.message);
     getTasks().then((res) => {
       setTasks(res.res.tasks);
-      console.log(tasks);
     });
   };
+  const [data, setData] = useState({});
   return (
     <main className="home-container">
       <div className="tasks-form">
@@ -55,13 +56,23 @@ export const MainHome = () => {
               tasks.map((e) => {
                 return (
                   <div key={e.id} className="task">
-                    <div>
-                      <h2>{e.title}</h2>
-                      <p>{e.description}</p>
-                      <p>{e.isComplete ? "completada" : "pendiente"}</p>
+                    <div className="div-tasks">
+                      <h3>{e.title}</h3>
+                      <p className="description-p">{e.description}</p>
+                      <p className="status-p">{e.isComplete ? "completada" : "pendiente"}</p>
                     </div>
                     <div className="btn-operator">
-                      <button>eliminar</button>
+                      <button
+                        onClick={async () => {
+                          await deleteTask(e.id, setData);
+                          alert(data.message);
+                          getTasks().then((res) => {
+                            setTasks(res.res.tasks);
+                          });
+                        }}
+                      >
+                        eliminar
+                      </button>
                       <button>actualizar</button>
                     </div>
                   </div>

@@ -15,6 +15,7 @@ export const MainHome = () => {
       setTasks(res.res.tasks);
     });
   }, []);
+
   const createTask = async (e) => {
     e.preventDefault();
     const title = titleR.current.value;
@@ -26,7 +27,9 @@ export const MainHome = () => {
       setTasks(res.res.tasks);
     });
   };
+
   const [data, setData] = useState({});
+
   return (
     <main className="home-container">
       <div className="tasks-form">
@@ -66,6 +69,7 @@ export const MainHome = () => {
                         onClick={async () => {
                           await deleteTask(e.id, setData);
                           alert(data.message);
+
                           getTasks().then((res) => {
                             setTasks(res.res.tasks);
                           });
@@ -73,7 +77,6 @@ export const MainHome = () => {
                       >
                         eliminar
                       </button>
-                      <button>actualizar</button>
                     </div>
                   </div>
                 );
